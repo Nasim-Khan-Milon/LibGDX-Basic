@@ -16,6 +16,10 @@ public class Main extends ApplicationAdapter {
         spriteBatch = new SpriteBatch();
         viewport = new FitViewport(8, 5);
 
+        AssetLoader.load();
+        AssetLoader.music.setLooping(true);
+        AssetLoader.music.setVolume(0.5f);
+        AssetLoader.music.play();
 
     }
 
@@ -32,6 +36,6 @@ public class Main extends ApplicationAdapter {
     @Override
     public void dispose() {
         spriteBatch.dispose();
-
+        AssetLoader.dispose();
     }
 }
