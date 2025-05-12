@@ -9,6 +9,7 @@ public class Main extends ApplicationAdapter {
     SpriteBatch spriteBatch;
     FitViewport viewport;
 
+    GameWorld gameWorld;
 
 
     @Override
@@ -21,6 +22,8 @@ public class Main extends ApplicationAdapter {
         AssetLoader.music.setVolume(0.5f);
         AssetLoader.music.play();
 
+        gameWorld = new GameWorld(viewport);
+
     }
 
     @Override
@@ -30,7 +33,8 @@ public class Main extends ApplicationAdapter {
 
     @Override
     public void render() {
-
+        gameWorld.update();
+        gameWorld.draw(spriteBatch);
     }
 
     @Override
