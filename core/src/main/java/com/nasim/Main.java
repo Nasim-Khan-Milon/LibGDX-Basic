@@ -22,7 +22,7 @@ public class Main extends ApplicationAdapter {
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f,1f);
         batch.begin();
-        batch.draw(image, 150, 210);
+        batch.draw(image, 160, 230);
         batch.end();
     }
 
