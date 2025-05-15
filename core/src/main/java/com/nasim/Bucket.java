@@ -16,7 +16,6 @@ public class Bucket {
     }
 
 
-
     public void moveX(float amount) {
         sprite.translateX(amount);
     }

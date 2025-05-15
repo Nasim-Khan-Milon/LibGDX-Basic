@@ -9,13 +9,15 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class GameWorld {
     private final FitViewport viewport;
+    private final Bucket bucket;
 
-    public GameWorld(FitViewport viewport) {
+    public GameWorld(FitViewport viewport, Bucket bucket) {
         this.viewport = viewport;
+        this.bucket = bucket;
     }
 
     public void update() {
-        
+
     }
 
     public void draw(SpriteBatch batch) {

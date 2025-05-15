@@ -22,7 +22,8 @@ public class Main extends ApplicationAdapter {
         AssetLoader.music.setVolume(0.5f);
         AssetLoader.music.play();
 
-        gameWorld = new GameWorld(viewport);
+        Bucket bucket = new Bucket();
+        gameWorld = new GameWorld(viewport, bucket);
 
     }
 
