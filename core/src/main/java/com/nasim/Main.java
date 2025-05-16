@@ -10,7 +10,7 @@ public class Main extends ApplicationAdapter {
     FitViewport viewport;
 
     GameWorld gameWorld;
-
+    InputHandler inputHandler;
 
     @Override
     public void create() {
@@ -24,7 +24,7 @@ public class Main extends ApplicationAdapter {
 
         Bucket bucket = new Bucket();
         gameWorld = new GameWorld(viewport, bucket);
-
+        inputHandler = new InputHandler(viewport, bucket);
     }
 
     @Override
@@ -34,6 +34,7 @@ public class Main extends ApplicationAdapter {
 
     @Override
     public void render() {
+        inputHandler.handleInput();
         gameWorld.update();
         gameWorld.draw(spriteBatch);
     }
