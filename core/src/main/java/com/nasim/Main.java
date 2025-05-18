@@ -1,12 +1,11 @@
 package com.nasim;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-public class Main extends Game {
+public class Main extends ApplicationAdapter {
     SpriteBatch spriteBatch;
     FitViewport viewport;
 
