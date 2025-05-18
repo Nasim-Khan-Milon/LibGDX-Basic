@@ -40,8 +40,10 @@ public class GameWorld {
             drop.update(delta);
 
             if (drop.isOffScreen()) {
-                droplets.removeIndex(i);
-            } else if (drop.getBounds().overlaps(bucket.getBounds())) {
+                System.out.println("Game Over! Final Score: " + score);
+                com.badlogic.gdx.Gdx.app.exit();  // Immediately exit the game
+                return;
+            }  else if (drop.getBounds().overlaps(bucket.getBounds())) {
                 droplets.removeIndex(i);
                 AssetLoader.dropSound.play();
                 score++;
