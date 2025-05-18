@@ -15,7 +15,7 @@ public class Main extends ApplicationAdapter {
     @Override
     public void create() {
         spriteBatch = new SpriteBatch();
-        viewport = new FitViewport(8, 5);
+        viewport = new FitViewport(16, 10);
 
         AssetLoader.load();
         AssetLoader.music.setLooping(true);

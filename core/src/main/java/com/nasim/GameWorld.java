@@ -1,6 +1,8 @@
 package com.nasim;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
@@ -13,10 +15,19 @@ public class GameWorld {
     private final Array<Droplet> droplets;
     private float dropTimer = 0f;
 
+    private int score = 0;
+    private final BitmapFont font;
+    private final GlyphLayout layout;
+
     public GameWorld(FitViewport viewport, Bucket bucket) {
         this.viewport = viewport;
         this.bucket = bucket;
         this.droplets = new Array<>();
+
+        this.font = new BitmapFont(); // Default font
+        font.getData().setScale(0.05f); // Adjust font size for your world size
+        font.setColor(Color.WHITE);
+        layout = new GlyphLayout();
     }
 
     public void update() {
@@ -33,6 +44,7 @@ public class GameWorld {
             } else if (drop.getBounds().overlaps(bucket.getBounds())) {
                 droplets.removeIndex(i);
                 AssetLoader.dropSound.play();
+                score++;
             }
         }
 
@@ -55,7 +67,15 @@ public class GameWorld {
             drop.getSprite().draw(batch);
         }
 
+        drawScore(batch);
+
         batch.end();
+    }
+
+    private void drawScore(SpriteBatch batch) {
+        String scoreText = "Score: " + score;
+        layout.setText(font, scoreText);
+        font.draw(batch, layout, 0.2f, viewport.getWorldHeight() - 0.2f);
     }
 
     private void spawnDroplet() {
