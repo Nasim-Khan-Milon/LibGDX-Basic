@@ -3,7 +3,7 @@ package com.nasim;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Rectangle;
 
-public class Bucket {
+public class Bucket implements Collidable{
     private final Sprite sprite;
     private final Rectangle bounds;
 
@@ -37,3 +37,6 @@ public class Bucket {
         if (sprite.getX() > maxX) sprite.setX(maxX);
     }
 }
+
+
+
