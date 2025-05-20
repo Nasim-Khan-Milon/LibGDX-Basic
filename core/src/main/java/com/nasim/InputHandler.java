@@ -17,7 +17,7 @@ public class InputHandler {
 
     public void handleInput() {
         float delta = Gdx.graphics.getDeltaTime();
-        float speed = 4f;
+        final float speed = 4f;
 
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             bucket.moveX(-speed * delta);
