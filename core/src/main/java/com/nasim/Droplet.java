@@ -9,7 +9,7 @@ public class Droplet {
 
     public Droplet(float x, float y) {
         sprite = new Sprite(AssetLoader.droplet);
-        sprite.setSize(1, 1);
+        sprite.setSize(1.5f, 1.5f);
         sprite.setPosition(x, y);
         bounds = new Rectangle();
     }
